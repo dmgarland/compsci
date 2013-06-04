@@ -7,8 +7,11 @@ module Graphable
     vertices.each do |v|
       from_node = g.add_nodes(v.data)
       v.edges.values.each do |e|
-        to_node = g.add_nodes(e.to.data)
-        g.add_edge(from_node, to_node, :label => e.cost)
+        unless e.printed
+          to_node = g.add_nodes(e.to.data)
+          g.add_edge(from_node, to_node, :label => e.cost)
+          e.to.edges[v.data].printed = true
+        end
       end
     end
 

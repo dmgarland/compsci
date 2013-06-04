@@ -36,6 +36,10 @@ describe Graph do
     @sfo.adjacent?(@lax).should be_true
     @sfo.adjacent?(@phx).should be_true
     @sfo.adjacent?(@jfk).should be_false
+    @lax.adjacent?(@sfo).should be_true
+    @phx.adjacent?(@sfo).should be_true
   end
+
+
 
 end
