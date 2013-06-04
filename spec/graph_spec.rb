@@ -26,6 +26,8 @@ describe Graph do
     @graph.add_edge(@den, @jfk, 1778)
 
     @graph.to_png
+
+    pending "Make these work..."
   end
 
   it "should know how many vertices there are" do
@@ -40,6 +42,15 @@ describe Graph do
     @phx.adjacent?(@sfo).should be_true
   end
 
+  it "should calculate the shortest path between SF and NYC" do
+    @graph.shortest_path(@sfo, @lax).should eq([@sfo, @ord, @jfk])
+    @jfk.distance.should eq(2922)
+  end
+
+  it "should calculate the shortest path between SF and Houston" do
+    @graph.shortest_path(@sfo, @iah).should eq([@sfo, @lax, @phx, @iah])
+    @jfk.distance.should eq(1928)
+  end
 
 
 end

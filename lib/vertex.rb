@@ -2,6 +2,8 @@ class Vertex
 
   attr_accessor :data
   attr_accessor :edges
+  attr_accessor :distance
+  attr_accessor :visited
 
   def initialize(data)
     self.data = data
@@ -10,6 +12,10 @@ class Vertex
 
   def adjacent?(to_node)
     edges.include?(to_node.data)
+  end
+
+  def to_s
+    data
   end
 
 end
