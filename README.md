@@ -2,7 +2,7 @@
 
 # TODO
 
-* Write a program that uses a recusive algorithm that calculates 25! (factorial).
+* Write a program that uses a recusive algorithm that calculates 25! (factorial). Start by using the test provided to get factorial of 5 working, then make the tests pass.
 * Fibonacci sequence - get the test running and re-implement using an iterative rather than recurisve approach. What are the pros and cons of each?
 * Get the binary tree test to pass. Use recursion to solve the problems.
 * Use Nokogiri to obtain the HTML DOM for the NASDAQ: http://finance.yahoo.com/actives?e=o
