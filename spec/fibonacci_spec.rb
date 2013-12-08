@@ -4,7 +4,7 @@ describe Fibonacci do
 
   before do
     before = Time.now
-    @numbers = Fibonacci.new.seq(0, 10)
+    @numbers = Fibonacci.seq(0, 10)
     @recursive = Time.now - before
   end
 
@@ -16,7 +16,7 @@ describe Fibonacci do
     before do
       pending "TODO... write an iterative method thats faster"
       before = Time.now
-      @numbers = Fibonacci.new.iterative_seq(0, 10)
+      @numbers = Fibonacci.iterative_seq(0, 10)
       @iterative = Time.now - before
     end
 
