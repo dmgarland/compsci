@@ -29,11 +29,11 @@ describe BinaryTree do
       end
 
       it "should count the number of nodes" do
-        @tree.nodes.should eq(7)
+        @tree.nodes.length.should eq(7)
       end
 
       it "should count the number of leaf nodes" do
-        @tree.nodes.should eq(2)
+        @tree.leaf_nodes.should eq(2)
       end
 
       it "should find a Node by name" do

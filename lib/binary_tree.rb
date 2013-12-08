@@ -19,10 +19,8 @@ class BinaryTree
   end
 
   def search
-    # do stuff
   end
 
-  def to_s
-    self.root.to_s.squeeze(" ").strip
+  def nodes
   end
 end
