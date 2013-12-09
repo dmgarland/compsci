@@ -18,9 +18,21 @@ class BinaryTree
     end
   end
 
-  def search
+  def search(node = self.root)
   end
 
-  def nodes
+  def nodes(node = self.root)
+  end
+
+  def leaf_nodes(node = self.root)
+  end
+
+  def include?(name)
+  end
+
+  def find(name)
+  end
+
+  def delete(name, node = self.root)
   end
 end
