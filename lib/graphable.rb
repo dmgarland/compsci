@@ -9,7 +9,7 @@ module Graphable
       v.edges.values.each do |e|
         unless e.printed
           to_node = g.add_nodes(e.to.data)
-          g.add_edge(from_node, to_node, :label => e.cost)
+          g.add_edges(from_node, to_node, :label => e.cost)
           e.to.edges[v.data].printed = true
         end
       end

@@ -7,6 +7,7 @@ describe Graph do
 
     @sfo = @graph.add_vertex("San Francisco")
     @lax = @graph.add_vertex("Los Angeles")
+    @san = @graph.add_vertex("San Diego")
     @phx = @graph.add_vertex("Phoenix")
     @den = @graph.add_vertex("Denver")
     @ord = @graph.add_vertex("Chicago")
@@ -15,8 +16,11 @@ describe Graph do
 
     @graph.add_edge(@sfo, @lax, 381)
     @graph.add_edge(@sfo, @phx, 754)
-    @graph.add_edge(@sfo, @ord, 2132)
+    @graph.add_edge(@sfo, @ord, 2732)
+    @graph.add_edge(@san, @lax, 381)
+    @graph.add_edge(@san, @phx, 335)
     @graph.add_edge(@lax, @phx, 373)
+    @graph.add_edge(@den, @san, 335)
     @graph.add_edge(@phx, @den, 862)
     @graph.add_edge(@phx, @iah, 1174)
     @graph.add_edge(@iah, @den, 1120)
