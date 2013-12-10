@@ -15,12 +15,12 @@ describe Graph do
     @jfk = @graph.add_vertex("New York")
 
     @graph.add_edge(@sfo, @lax, 381)
-    @graph.add_edge(@sfo, @phx, 754)
+    @graph.add_edge(@sfo, @phx, 756)
     @graph.add_edge(@sfo, @ord, 2732)
-    @graph.add_edge(@san, @lax, 381)
+    @graph.add_edge(@san, @lax, 393)
     @graph.add_edge(@san, @phx, 335)
     @graph.add_edge(@lax, @phx, 373)
-    @graph.add_edge(@den, @san, 335)
+    @graph.add_edge(@den, @san, 334)
     @graph.add_edge(@phx, @den, 862)
     @graph.add_edge(@phx, @iah, 1174)
     @graph.add_edge(@iah, @den, 1120)
@@ -31,11 +31,11 @@ describe Graph do
 
     @graph.to_png
 
-    pending "Make these work..."
+    # pending "Make these work..."
   end
 
   it "should know how many vertices there are" do
-    @graph.vertices.length.should eq(7)
+    @graph.vertices.length.should eq(8)
   end
 
   it "should know which cities are adjacent to each other" do
@@ -46,14 +46,24 @@ describe Graph do
     @phx.adjacent?(@sfo).should be_true
   end
 
+  it "should calculate the shortest path between SF and LAX" do
+    @graph.shortest_path(@sfo, @lax)
+    @lax.distance.should eq(381)
+  end
+
   it "should calculate the shortest path between SF and NYC" do
     @graph.shortest_path(@sfo, @jfk)
-    @jfk.distance.should eq(2922)
+    @jfk.distance.should eq(2886)
+  end
+
+  it "should calculate the shortest path between SF and PHX" do
+    @graph.shortest_path(@sfo, @phx)
+    @phx.distance.should eq(754)
   end
 
   it "should calculate the shortest path between SF and Houston" do
     @graph.shortest_path(@sfo, @iah)
-    @jfk.distance.should eq(1928)
+    @iah.distance.should eq(1928)
   end
 
 

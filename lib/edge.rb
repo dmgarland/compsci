@@ -7,4 +7,8 @@ class Edge
   def initialize(from, to, cost)
     self.from, self.to, self.cost = from, to, cost
   end
+
+  def to_s
+    "from: #{from.data} to: #{to.data}, cost: #{cost}"
+  end
 end
