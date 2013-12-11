@@ -23,8 +23,6 @@ class Graph
   end
 
   def shortest_path(from_node, to_node)
-    shortest_path = []
-
     # 1. Assign a tentative distance value of zero to the starting vertex,
     # infinity to every other node
 
@@ -52,7 +50,10 @@ class Graph
     end
 
     # 8. Once we've marked the destination vertex as visted we've found the
-    # shortest path!
+    # shortest path! Work backwards from the to_node and find the nodes where
+    # the current nodes distance less the edges cost is the shortest distance
+    # that we've calculated already.
+    shortest_path = []
 
     shortest_path
   end

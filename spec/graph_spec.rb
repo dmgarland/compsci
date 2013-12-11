@@ -31,7 +31,7 @@ describe Graph do
 
     @graph.to_png
 
-    # pending "Make these work..."
+    pending "Make these work..."
   end
 
   it "should know how many vertices there are" do
@@ -46,25 +46,40 @@ describe Graph do
     @phx.adjacent?(@sfo).should be_true
   end
 
-  it "should calculate the shortest path between SF and LAX" do
+  it "should calculate the shortest distance between SF and LAX" do
     @graph.shortest_path(@sfo, @lax)
     @lax.distance.should eq(381)
   end
 
-  it "should calculate the shortest path between SF and NYC" do
+  it "should calculate the shortest distance between SF and NYC" do
     @graph.shortest_path(@sfo, @jfk)
     @jfk.distance.should eq(2886)
   end
 
-  it "should calculate the shortest path between SF and PHX" do
+  it "should calculate the shortest distance between SF and PHX" do
     @graph.shortest_path(@sfo, @phx)
     @phx.distance.should eq(754)
   end
 
-  it "should calculate the shortest path between SF and Houston" do
+  it "should calculate the shortest distance between SF and Houston" do
     @graph.shortest_path(@sfo, @iah)
     @iah.distance.should eq(1928)
   end
 
+  it "should find the shortest path between SF and LAX" do
+    expect(@graph.shortest_path(@sfo, @lax)).to eq([@sfo, @lax])
+  end
+
+  it "should find the shortest path between SF and NY" do
+    expect(@graph.shortest_path(@sfo, @jfk)).to eq([@sfo, @lax, @san, @den, @jfk])
+  end
+
+  it "should calculate the shortest distance between SF and PHX" do
+    expect(@graph.shortest_path(@sfo, @phx)).to eq([@sfo, @lax, @phx])
+  end
+
+  it "should calculate the shortest distance between SF and Houston" do
+    expect(@graph.shortest_path(@sfo, @iah)).to eq([@sfo, @lax, @phx, @iah])
+  end
 
 end

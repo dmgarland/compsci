@@ -19,4 +19,12 @@ class Vertex
     data
   end
 
+  def inspect
+    self.to_s
+  end
+
+  def eq(vertex)
+    self.data == vertex.data
+  end
+
 end
