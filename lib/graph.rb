@@ -25,25 +25,22 @@ class Graph
   def shortest_path(from_node, to_node)
     shortest_path = []
 
-    # 1. Assign a tentative distance value of zero to the starting vertex, nil
-    # to every other node
-    current = from_node
-    current.distance = 0
+    # 1. Assign a tentative distance value of zero to the starting vertex,
+    # infinity to every other node
 
     # 2. Mark all vertices unvisited
-    mark_unvisted
 
     # 3. Create a set of unvisited vertices called the unvisited set, consisting
     # of all the vertices except the initial vertex
-    unvisited = vertices.clone.delete(current)
 
     while(!to_node.visited) do
-      # 4. For the current vertex, find all its adjacent, unvisited vertices and
-      # calculate their tentative distances, which is the sum of the current
-      # node's distance with the edge's cost
+      # 4. a) For the current vertex, find all its adjacent, unvisited vertices
 
-      # 5. If the tentative distance is less than the previously recorded
-      # tentative distance then overwrite it.
+      # 4. b) calculate their tentative distances, which is the sum of the
+      # current node's distance with the edge's cost
+
+      # 5. If the tentative distance of the neighbouring vertex is less than the
+      # previously recorded tentative distance, then overwrite it.
 
       # 6. Once all distances are calculated, mark the current vertex as visited
       # and remove it from the unvisited set.
@@ -59,10 +56,4 @@ class Graph
 
     shortest_path
   end
-
-  private
-  def mark_unvisted
-    self.vertices.each {|v| v.visited = false }
-  end
-
 end
