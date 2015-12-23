@@ -2,6 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rspec'
 gem 'pry'
-gem 'pry-debugger'
+gem 'pry-byebug'
 gem 'nokogiri'
 gem 'ruby-graphviz'
