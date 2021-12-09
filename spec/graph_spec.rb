@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Graph do
 
-  before do
+  before(:all) do
     @graph = Graph.new
 
     @sfo = @graph.add_vertex("San Francisco")
@@ -30,56 +30,63 @@ describe Graph do
     @graph.add_edge(@den, @jfk, 1778)
 
     @graph.to_png
-
-    pending "Make these work..."
   end
 
   it "should know how many vertices there are" do
+    pending "Make these work..."
     @graph.vertices.length.should eq(8)
   end
 
   it "should know which cities are adjacent to each other" do
-    @sfo.adjacent?(@lax).should be_true
-    @sfo.adjacent?(@phx).should be_true
-    @sfo.adjacent?(@jfk).should be_false
-    @lax.adjacent?(@sfo).should be_true
-    @phx.adjacent?(@sfo).should be_true
+    pending "Make these work..."
+    @sfo.adjacent?(@lax).should be true
+    @sfo.adjacent?(@phx).should be true
+    @sfo.adjacent?(@jfk).should be false
+    @lax.adjacent?(@sfo).should be true
+    @phx.adjacent?(@sfo).should be true
   end
 
   it "should calculate the shortest distance between SF and LAX" do
+    pending "Make these work..."
     @graph.shortest_path(@sfo, @lax)
     @lax.distance.should eq(381)
   end
 
   it "should calculate the shortest distance between SF and NYC" do
+    pending "Make these work..."
     @graph.shortest_path(@sfo, @jfk)
     @jfk.distance.should eq(2886)
   end
 
   it "should calculate the shortest distance between SF and PHX" do
+    pending "Make these work..."
     @graph.shortest_path(@sfo, @phx)
     @phx.distance.should eq(754)
   end
 
   it "should calculate the shortest distance between SF and Houston" do
+    pending "Make these work..."
     @graph.shortest_path(@sfo, @iah)
     @iah.distance.should eq(1928)
   end
 
   it "should find the shortest path between SF and LAX" do
+    pending "Make these work..."
     expect(@graph.shortest_path(@sfo, @lax)).to eq([@sfo, @lax])
   end
 
   it "should find the shortest path between SF and NY" do
+    pending "Make these work..."
     expect(@graph.shortest_path(@sfo, @jfk)).to eq([@sfo, @lax, @san, @den, @jfk])
   end
 
   it "should calculate the shortest distance between SF and PHX" do
+    pending "Make these work..."
     expect(@graph.shortest_path(@sfo, @phx)).to eq([@sfo, @lax, @phx])
   end
 
   it "should calculate the shortest distance between SF and Houston" do
+    pending "Make these work..."
     expect(@graph.shortest_path(@sfo, @iah)).to eq([@sfo, @lax, @phx, @iah])
   end
-
 end
