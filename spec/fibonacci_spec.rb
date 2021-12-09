@@ -6,6 +6,7 @@ describe Fibonacci do
     before = Time.now
     @numbers = Fibonacci.seq(0, 10)
     @recursive = Time.now - before
+    pending
   end
 
   it "should generate the Fibonacci sequence" do
